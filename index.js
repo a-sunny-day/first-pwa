@@ -19,3 +19,5 @@ notifyBtn.addEventListener('click', function() {
     console.log('click to show notification');
     new Notification("Hello world Notification: " + Date.now() % 10000);
 })
+
+requestNotificationAccess();
