@@ -7,9 +7,15 @@ function showNotifycation(){
 function requestNotificationAccess() {
     Notification.requestPermission().then( status => {
         if(status == "granted") {
-            showNotifycation();
+            // showNotifycation();
         } else {
             console.error('request for notification denied');
         }
     })
 }
+
+let notifyBtn = document.querySelector('.show-notification');
+notifyBtn.addEventListener('click', function() {
+    console.log('click to show notification');
+    new Notification("Hello world Notification: " + Date.now() % 10000);
+})
