@@ -1,23 +1,38 @@
-function showNotifycation(){
-    new Notification("Hello world Notification: " + Date.now() % 10000);
-    setTimeout(showNotifycation, 5000);
+
+function showNotification(title, options){
+    console.log('noifications fired');
+    new Notification(title);
 }
 
-
+// [Violation] Only request notification permission in response to a user gesture.
 function requestNotificationAccess() {
-    Notification.requestPermission().then( status => {
-        if(status == "granted") {
-            // showNotifycation();
+    return Notification.requestPermission().then( status => {
+        if(status == "denied") {
+            return Promise.reject("request for notification denied")
         } else {
-            console.error('request for notification denied');
+            return Promise.resolve("granted");
         }
     })
 }
 
 let notifyBtn = document.querySelector('.show-notification');
+
 notifyBtn.addEventListener('click', function() {
     console.log('click to show notification');
-    new Notification("Hello world Notification: " + Date.now() % 10000);
+    switch(Notification.permission) {
+        case "default":
+            requestNotificationAccess().then( () => {
+                showNotification("OK");
+            }).catch( errTxt => {
+                console.error(errTxt);
+            });
+            break;
+        case "granted":
+            showNotification("OK");
+            break;
+        case "denied":
+            console.error('user has previously denied the request');
+            break;
+    }
+    
 })
-
-requestNotificationAccess();
