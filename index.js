@@ -11,7 +11,7 @@ function showNotification(title, options){
         console.log("notification Click", e);
         // window.location.href = "www.zoom.us";
         e.preventDefault();
-        window.open('www.zoom.us', '_blank');
+        window.open('https://www.zoom.us', '_blank');
     });
 
     notification.addEventListener('error', e => {
