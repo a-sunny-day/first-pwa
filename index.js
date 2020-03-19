@@ -12,6 +12,7 @@ function showNotification(title, options){
         // window.location.href = "www.zoom.us";
         e.preventDefault();
         window.open('https://www.zoom.us', '_blank');
+        e.target.close();
     });
 
     notification.addEventListener('error', e => {
