@@ -1,4 +1,12 @@
 
+if("serviceWorker" in navigator) {
+    navigator.serviceWorker
+        .register('./sw.js')
+        .then(function(e) {
+            console.log("Service Worker Registered");
+        })
+}
+
 function showNotification(title, options){
     console.log('noifications fired');
     let notification = new Notification(title);
