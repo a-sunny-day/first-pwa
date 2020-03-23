@@ -48,24 +48,34 @@ function requestNotificationAccess() {
     })
 }
 
-let notifyBtn = document.querySelector('.show-notification');
+// let notifyBtn = document.querySelector('.show-notification');
 
-notifyBtn.addEventListener('click', function() {
-    console.log('click to show notification');
-    switch(Notification.permission) {
-        case "default":
-            requestNotificationAccess().then( () => {
-                showNotification("OK");
-            }).catch( errTxt => {
-                console.error(errTxt);
-            });
-            break;
-        case "granted":
-            showNotification("OK");
-            break;
-        case "denied":
-            console.error('user has previously denied the request');
-            break;
-    }
+// notifyBtn.addEventListener('click', function() {
+//     console.log('click to show notification');
+//     switch(Notification.permission) {
+//         case "default":
+//             requestNotificationAccess().then( () => {
+//                 showNotification("OK");
+//             }).catch( errTxt => {
+//                 console.error(errTxt);
+//             });
+//             break;
+//         case "granted":
+//             showNotification("OK");
+//             break;
+//         case "denied":
+//             console.error('user has previously denied the request');
+//             break;
+//     }
     
+// })
+
+window.addEventListener('load', function() {
+    requestNotificationAccess()
+        .then(status => {
+            console.log('Access Notification Successfully');
+        })
+        .catch(error => {
+            console.log('Access Notification Failed');
+        });
 })
