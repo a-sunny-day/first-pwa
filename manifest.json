@@ -1,7 +1,7 @@
 {
     "name": "PWA Application",
     "short_name": "PWA",
-    "start_url": "/",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#333",
     "description": "这里是manifest的json",
