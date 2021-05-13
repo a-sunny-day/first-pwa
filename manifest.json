@@ -8,6 +8,7 @@
     "description": "这里是manifest的json",
     "orientation": "portrait-primary",
     "theme_color": "#5eace0",
+    "capture_links": ["existing-client-navigate", "none"],
     "icons": [{
         "src": "img/icons/book-32.png",
         "sizes": "32x32",
