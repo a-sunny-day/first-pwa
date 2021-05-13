@@ -2,7 +2,7 @@
     "name": "Chris Pwa",
     "short_name": "CPA",
     "start_url": "/first-pwa/",
-    "scope": "/first-pwa",
+    "scope": "/first-pwa/",
     "display": "standalone",
     "background_color": "#333",
     "description": "这里是manifest的json",
