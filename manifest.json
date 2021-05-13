@@ -1,7 +1,7 @@
 {
     "name": "Chris Pwa",
     "short_name": "CPA",
-    "start_url": "/first-pwa",
+    "start_url": "/first-pwa/",
     "scope": "/first-pwa",
     "display": "standalone",
     "background_color": "#333",
