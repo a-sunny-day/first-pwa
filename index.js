@@ -2,9 +2,9 @@
 if("serviceWorker" in navigator) {
     navigator.serviceWorker
         .register('./sw.js', {scope: "/first-pwa"})
-        .then(function(e) {
+        .then(function(reg) {
             console.log("Service Worker Registered");
-        console.log('Registration successful, scope is:', registration.scope);
+        console.log('Registration successful, scope is:', reg.scope);
         })
 }
 
